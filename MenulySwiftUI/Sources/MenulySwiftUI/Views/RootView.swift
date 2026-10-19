@@ -13,6 +13,11 @@ public struct RootView: View {
                     MenulyListView()
                 }
             }
+            Tab("New Recipe", systemImage: "plus") {
+                NavigationStack {
+                    MenulyNewRecipeView()
+                }
+            }
         }
     }
 }

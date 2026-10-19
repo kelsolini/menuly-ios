@@ -16,10 +16,10 @@ struct MenulyListView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 32) {
+            LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(menulyRepository.recipeList) { recipe in
                     NavigationLink(destination: MenulyRecipeDetailedView(recipe: recipe)) {
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: 4) {
                             Color.clear
                                 .frame(height: 140)
                                 .frame(maxWidth: .infinity)
