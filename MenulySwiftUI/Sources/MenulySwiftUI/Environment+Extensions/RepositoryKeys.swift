@@ -7,6 +7,15 @@ final class PlaceholderMenulyRepository: MenulyRepositoryProtocol {
     func fetchRecipes() async throws {
         // no-op
     }
+    
+    let shoppingList: [MenulyShoppingListItem] = []
+    
+    func fetchShoppingList() throws {
+        // no-op
+    }
+    func addToShoppingList(_ ingredients: [MenulyIngredient]) throws {
+        // no-op
+    }
 }
 
 public extension EnvironmentValues {

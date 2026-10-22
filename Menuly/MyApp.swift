@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 import MenulyFoundation
 import MenulySwiftUI
@@ -10,12 +11,16 @@ import MenulyMocks
     
     private let menulyService: MenulyServiceProtocol
     private let menulyRepository: MenulyRepositoryProtocol
+    private let modelContainer: ModelContainer
     
     init() {
+        self.modelContainer = try! ModelContainer(for: MenulyIngredientEntity.self)
+        
         let service = MocksMenulyService()
         self.menulyService = service
-        self.menulyRepository = MockMenulyRepository(
-            menulyService: service
+        self.menulyRepository = MenulyRepository(
+            menulyService: service,
+            modelContext: modelContainer.mainContext
         )
     }
     
